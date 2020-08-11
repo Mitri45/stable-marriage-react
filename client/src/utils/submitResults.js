@@ -1,8 +1,14 @@
 import axios from "axios";
 
-export function submitResult(rankingResults) {
+export function submitResult(rankedList, currentUser) {
+  const parsedRankedList = [];
+  rankedList.forEach((el) => {
+    parsedRankedList.push(el["email"]);
+  });
+  const resultForMarriage = [currentUser.email, parsedRankedList];
+
   axios
-    .post("/user", rankingResults)
+    .post("/ranking", resultForMarriage)
     .then(function (response) {
       return response;
     })

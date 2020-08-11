@@ -107,8 +107,8 @@ export default function RankingList() {
   };
 
   // TODO - organizing and submitting results of raking to somewhere
-  const submitResults = () => {
-    submitResults(state);
+  const submitHandler = () => {
+    submitResult(state, currentUser);
   };
   return (
     <Container>
@@ -129,7 +129,7 @@ export default function RankingList() {
             <UserRating>
               <p className="user-rating">{index + 1}</p>
             </UserRating>
-            {item.photo === "" ? (
+            {item.photo.length === 0 ? (
               <StyledImg src={userAvatar} alt="User avatar" />
             ) : (
               <StyledImg src={item.photo} alt="User avatar" />
@@ -143,7 +143,7 @@ export default function RankingList() {
       <button
         type="button"
         style={{ display: "block", margin: "1em 0", padding: "1em" }}
-        onClick={submitResults}
+        onClick={submitHandler}
       >
         Submit ranking results
       </button>

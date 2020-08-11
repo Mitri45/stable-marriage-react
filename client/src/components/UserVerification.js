@@ -12,7 +12,7 @@ const UserVerification = () => {
     if (validUser) {
       localStorage.setItem("validUser", JSON.stringify(validUser[0]));
       const rankingList = [];
-      validUser[1].map((el) => {
+      validUser[1].forEach((el) => {
         rankingList.push({
           id: el["Order ID"],
           name: el["First Name"],
@@ -21,12 +21,11 @@ const UserVerification = () => {
           email: el["Email"],
         });
       });
-      console.log(rankingList);
       localStorage.setItem("rankingList", JSON.stringify(rankingList));
       history.push("/ranking");
     } else {
-      document.getElementById("userNotFound").innerText =
-        "Please, check the spelling and try once again";
+      const userNotFound = document.getElementById("userNotFound");
+      userNotFound.innerText = "Please, check the spelling and try once again";
     }
   };
   return (

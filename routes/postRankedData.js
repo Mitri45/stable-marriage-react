@@ -1,9 +1,12 @@
 const express = require("express");
-var router = express.Router();
+const router = express.Router();
+const bodyParser = require("body-parser");
+
+router.use(bodyParser.json());
 
 router.post("/ranking", (req, res) => {
-  console.log("Post event");
-  res.send(res);
+  console.log(req.body);
+  res.send("Post event");
 });
 
 module.exports = router;

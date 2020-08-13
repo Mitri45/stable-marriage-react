@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "node index.js",
+    "start": "node index.js",
     "client": "npm start --prefix frontend",
-    "dev": "concurrently -k \"nodemon server\" \"npm run client\""
+    "dev": "concurrently -k \"nodemon start\" \"npm run client\""
   },
   "author": "Dmitrii Bludov",
   "license": "ISC",

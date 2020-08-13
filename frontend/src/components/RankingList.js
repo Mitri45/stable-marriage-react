@@ -107,8 +107,11 @@ export default function RankingList() {
   };
 
   // TODO - organizing and submitting results of raking to somewhere
-  const submitHandler = () => {
-    submitResult(state, currentUser);
+  const submitHandler = async () => {
+    const submitted = await submitResult(state, currentUser);
+    if (submitted === 200) {
+      alert("200");
+    }
   };
   return (
     <Container>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { authenticateUser } from "../utils/authenticateUser";
+import { authenticateUser } from "../routes/authenticateUser";
 import { useHistory } from "react-router-dom";
 
 const UserVerification = () => {

@@ -1,10 +1,10 @@
 const fs = require("fs");
 
 exports.userVerification = (email) => {
-  const rawData = fs.readFileSync("./public/users.json");
+  const rawData = fs.readFileSync("./public/testData.json");
   const usersJsonObject = JSON.parse(rawData);
   const [mentees, mentors] = [usersJsonObject.mentees, usersJsonObject.mentors];
-  let result = [];
+  const result = [];
   for (let i = 0; i < mentors.length; i++) {
     if (mentors[i].Email.toLowerCase() === email) {
       const userInfo = {
@@ -22,7 +22,7 @@ exports.userVerification = (email) => {
         role: "mentee",
       };
       result.push(userInfo);
-      result.push(mentees);
+      result.push(mentors);
       return result;
     }
   }

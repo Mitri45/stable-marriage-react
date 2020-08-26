@@ -127,7 +127,7 @@ export default function RankingList() {
   return (
     <Container maxWidth="sm">
       <Typography variant="h4" component="h1">
-        {`Hi, ${currentUser.name}! Please rate this  
+        {`Hi, ${currentUser.name}! Please rate this
         ${currentUser.role === "mentor" ? "mentees" : "mentors"}:`}
       </Typography>
       <ListStyled>

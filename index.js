@@ -1,6 +1,8 @@
-require("dotenv").config();
 const express = require("express");
 const app = express();
+if (app.get("env") == "development") {
+  require("dotenv").config();
+}
 const mongoose = require("mongoose");
 const PORT = process.env.PORT || 9000;
 const path = require("path");
